@@ -53,6 +53,14 @@ services:
     volumes:
       - .:/usr/src/app
 
+
+  style:
+    <<: *app
+    command: pylint url_shortener
+    depends_on: []
+    volumes:
+      - .:/usr/src/app
+
 networks:
   ns:
     driver: bridge
