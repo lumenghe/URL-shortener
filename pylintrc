@@ -1,0 +1,8 @@
+[MESSAGE CONTROL]
+# R0903: too-few-public-methods
+# W1202: logging-format-interpolation
+# W0703: broad-except
+disable=R0903,W1202, W0703
+
+[BASIC]
+good-names=logger,app,shortener
