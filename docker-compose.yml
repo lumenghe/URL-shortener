@@ -46,6 +46,15 @@ services:
     networks:
       - ns
 
+  format-imports:
+    <<: *app
+    command: isort -rc url_shortener tests
+    networks:
+      - ns
+    volumes:
+      - .:/usr/src/app
+
+
   check-format-imports:
     <<: *app
     command: isort --check-only -rc url_shortener tests
@@ -53,6 +62,22 @@ services:
     volumes:
       - .:/usr/src/app
 
+
+  format:
+    <<: *app
+    command: black -l 79 --target-version py36 url_shortener tests
+    networks:
+      - ns
+    volumes:
+      - .:/usr/src/app
+
+
+  check-format:
+    <<: *app
+    command: black -l 79 --target-version py36 --check url_shortener tests
+    depends_on: []
+    volumes:
+      - .:/usr/src/app
 
   style:
     <<: *app
