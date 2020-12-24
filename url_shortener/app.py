@@ -22,6 +22,11 @@ def welcome():
     return jsonify({"message": "Welcome"}), 201
 
 
+
+@app.route("/shorten_url", methods=["POST"])
+def post_shorten_url():
+    pass
+
 def main():
     """ main function """
     logging.basicConfig(level=logging.INFO)
