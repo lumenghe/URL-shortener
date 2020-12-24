@@ -10,7 +10,6 @@ from flask import Flask, jsonify, redirect, request
 
 from url_shortener import DBHandler, UrlShortener
 
-
 app = Flask(__name__)
 shortener = UrlShortener()
 logger = logging.getLogger(__name__)
@@ -20,6 +19,7 @@ logger = logging.getLogger(__name__)
 def welcome():
     """welcome GET function"""
     return jsonify({"message": "Welcome"}), 201
+
 
 @app.route("/shorten_url", methods=["POST"])
 def post_shorten_url():
@@ -33,6 +33,30 @@ def post_shorten_url():
     url = request.json["url"]
     if url[:4] != "http":
         url = "http://" + url
+
+    parsed_url = urllib.parse.urlparse(url)
+    if not parsed_url.scheme:
+        return jsonify({"message": "not valid url"}), 400
+
+    db_handler = DBHandler()
+    # check if shorter url is in database
+    recode = db_handler.fetch_shortened((url,))
+    now = datetime.datetime.now()
+    if recode:
+        # if shorter url is in database, update updated time
+        db_handler.update(
+            (
+                now,
+                url,
+            )
+        )
+        return jsonify({"shortened": recode[0]}), 201
+    # if not in url table, insert it
+    shortened = shortener.shortener_factory(url)
+    db_handler.insert((shortened, url, now, now))
+
+    return jsonify({"shortened": shortened}), 201
+
 
 def main():
     """ main function """
