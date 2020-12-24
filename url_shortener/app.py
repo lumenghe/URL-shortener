@@ -15,6 +15,13 @@ app = Flask(__name__)
 shortener = UrlShortener()
 logger = logging.getLogger(__name__)
 
+
+@app.route("/", methods=["GET"])
+def welcome():
+    """welcome GET function"""
+    return jsonify({"message": "Welcome"}), 201
+
+
 def main():
     """ main function """
     logging.basicConfig(level=logging.INFO)
