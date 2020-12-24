@@ -15,3 +15,5 @@ app = Flask(__name__)
 shortener = UrlShortener()
 logger = logging.getLogger(__name__)
 
+if __name__ == "__main__":
+    main()
