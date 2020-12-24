@@ -21,11 +21,18 @@ def welcome():
     """welcome GET function"""
     return jsonify({"message": "Welcome"}), 201
 
-
-
 @app.route("/shorten_url", methods=["POST"])
 def post_shorten_url():
-    pass
+    """shorten url POST function"""
+    if not request.json:
+        return jsonify({"message": "not json format"}), 400
+
+    if "url" not in request.json:
+        return jsonify({"message": "url not found"}), 400
+
+    url = request.json["url"]
+    if url[:4] != "http":
+        url = "http://" + url
 
 def main():
     """ main function """
