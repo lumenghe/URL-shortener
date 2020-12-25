@@ -64,6 +64,19 @@ def shorten_url_get():
     return jsonify({"message": "must be POST"}), 400
 
 
+def remove_shortened(shortened):
+    """remove shortened GET function"""
+    db_handler = DBHandler()
+    recode = db_handler.fetch_original_url((shortened,))
+    if recode:
+        _ = db_handler.delete_shortener((shortened,))
+        return (
+            jsonify({"remove": shortened}),
+            201,
+        )
+
+    return jsonify({"message": "shortened not found"}), 201
+
 
 def main():
     """ main function """
