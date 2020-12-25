@@ -63,7 +63,7 @@ def shorten_url_get():
     """shorten url GET function"""
     return jsonify({"message": "must be POST"}), 400
 
-
+@app.route("/remove/<shortened>", methods=["GET"])
 def remove_shortened(shortened):
     """remove shortened GET function"""
     db_handler = DBHandler()
