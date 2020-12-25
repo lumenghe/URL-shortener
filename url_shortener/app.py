@@ -58,6 +58,13 @@ def post_shorten_url():
     return jsonify({"shortened": shortened}), 201
 
 
+@app.route("/shorten_url", methods=["GET"])
+def shorten_url_get():
+    """shorten url GET function"""
+    return jsonify({"message": "must be POST"}), 400
+
+
+
 def main():
     """ main function """
     logging.basicConfig(level=logging.INFO)
