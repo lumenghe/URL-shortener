@@ -81,6 +81,19 @@ def remove_shortened(shortened):
 @app.route("/original_url", methods=["POST"])
 def post_original_url():
     """original url POST function"""
+    shortened = request.json["shortened"]
+
+    db_handler = DBHandler()
+    recode = db_handler.fetch_original_url((shortened,))
+    if recode:
+        # if shorter url is in database, update updated time
+        db_handler.update(
+            (
+                datetime.datetime.now(),
+                recode[1],
+            )
+        )
+        return jsonify({"url": recode[1]}), 201
     return jsonify({"message": "unknow shortened"}), 400
 
 def main():
