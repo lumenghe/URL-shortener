@@ -78,6 +78,7 @@ def remove_shortened(shortened):
 
     return jsonify({"message": "shortened not found"}), 201
 
+@app.route("/original_url", methods=["POST"])
 def post_original_url():
     """original url POST function"""
     return jsonify({"message": "unknow shortened"}), 400
