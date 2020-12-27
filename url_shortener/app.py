@@ -103,6 +103,7 @@ def post_original_url():
 
     return jsonify({"message": "unknow shortened"}), 400
 
+@app.route("/<shortened>", methods=["GET"])
 def get_shortened(shortened):
     pass
 
