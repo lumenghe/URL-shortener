@@ -105,6 +105,12 @@ def post_original_url():
 
 @app.route("/<shortened>", methods=["GET"])
 def get_shortened(shortened):
+    """redirect shorter url GET function"""
+    db_handler = DBHandler()
+    recode = db_handler.fetch_original_url((shortened,))
+    if recode:
+        return redirect(recode[1], code=302)
+
     return jsonify({"message": "unknow shortened"}), 400
 
 def main():
