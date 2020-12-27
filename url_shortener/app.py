@@ -103,6 +103,9 @@ def post_original_url():
 
     return jsonify({"message": "unknow shortened"}), 400
 
+def get_shortened(shortened):
+    pass
+
 def main():
     """ main function """
     logging.basicConfig(level=logging.INFO)
