@@ -18,10 +18,12 @@ UPDATE URL
 SET updated = %s 
 WHERE original_url = %s;
 """
+
 DEPRECATION = """
 DELETE FROM URL 
 WHERE updated < %s;
 """
+
 DELETE_SHORTENER = """
 DELETE FROM URL 
 WHERE shortener = %s;
