@@ -13,3 +13,8 @@ INSERT INTO URL (shortener, original_url, created, updated)
 VALUES (%s, %s, %s, %s);
 """
 
+UPDATE = """
+UPDATE URL 
+SET updated = %s 
+WHERE original_url = %s;
+"""
