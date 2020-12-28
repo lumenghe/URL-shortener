@@ -22,4 +22,8 @@ DEPRECATION = """
 DELETE FROM URL 
 WHERE updated < %s;
 """
+DELETE_SHORTENER = """
+DELETE FROM URL 
+WHERE shortener = %s;
+"""
 
