@@ -5,3 +5,5 @@ import logging
 import time
 
 from url_shortener import DBHandler
+
+logger = logging.getLogger(__name__)
