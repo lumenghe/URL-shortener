@@ -29,6 +29,7 @@ class DeprecationHandler:
         logger.info("delete {} row".format(record))
 
 def main():
+    """ main function """
     handler = DeprecationHandler()
     while True:
         time.sleep(DELTA)
