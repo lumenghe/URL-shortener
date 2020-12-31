@@ -28,3 +28,5 @@ class DeprecationHandler:
         record = db_handler.deprecation((datetime.datetime.now() - delta,))
         logger.info("delete {} row".format(record))
 
+if __name__ == "__main__":
+    main()
