@@ -7,3 +7,5 @@ import time
 from url_shortener import DBHandler
 
 logger = logging.getLogger(__name__)
+
+DELTA = 60
