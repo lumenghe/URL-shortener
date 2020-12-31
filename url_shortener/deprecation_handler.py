@@ -12,4 +12,5 @@ DELTA = 60
 
 class DeprecationHandler:
     """ deprecation handler class """
-    pass
+    def __init__(self):
+        logging.basicConfig(level=logging.INFO)
