@@ -29,7 +29,7 @@ class DeprecationHandler:
         logger.info("delete {} row".format(record))
 
 def main():
-    pass
+    handler = DeprecationHandler()
 
 if __name__ == "__main__":
     main()
