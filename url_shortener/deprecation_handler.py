@@ -9,3 +9,7 @@ from url_shortener import DBHandler
 logger = logging.getLogger(__name__)
 
 DELTA = 60
+
+class DeprecationHandler:
+    """ deprecation handler class """
+    pass
