@@ -28,6 +28,7 @@ class DeprecationHandler:
         record = db_handler.deprecation((datetime.datetime.now() - delta,))
         logger.info("delete {} row".format(record))
 
+
 def main():
     """ main function """
     handler = DeprecationHandler()
@@ -35,5 +36,7 @@ def main():
         time.sleep(DELTA)
         logger.info("check and delete")
         handler.deprecation_rows()
+
+
 if __name__ == "__main__":
     main()
