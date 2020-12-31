@@ -10,8 +10,10 @@ logger = logging.getLogger(__name__)
 
 DELTA = 60
 
+
 class DeprecationHandler:
     """ deprecation handler class """
+
     def __init__(self):
         logging.basicConfig(level=logging.INFO)
 
@@ -24,4 +26,5 @@ class DeprecationHandler:
         db_handler = DBHandler()
         delta = datetime.timedelta(seconds=DELTA)
         record = db_handler.deprecation((datetime.datetime.now() - delta,))
-        logger.info("delete {} row".format(re
+        logger.info("delete {} row".format(record))
+
