@@ -30,6 +30,9 @@ class DeprecationHandler:
 
 def main():
     handler = DeprecationHandler()
-
+    while True:
+        time.sleep(DELTA)
+        logger.info("check and delete")
+        handler.deprecation_rows()
 if __name__ == "__main__":
     main()
