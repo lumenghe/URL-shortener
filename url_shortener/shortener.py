@@ -3,3 +3,6 @@
 import base64
 import logging
 from hashlib import blake2b
+
+logger = logging.getLogger(__name__)
+
