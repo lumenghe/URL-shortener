@@ -7,4 +7,6 @@ from hashlib import blake2b
 logger = logging.getLogger(__name__)
 
 class UrlShortener:
-    pass
+    """class of generating a 8 bytes hash shorter url."""
+
+    DIGEST_SIZE = 8
