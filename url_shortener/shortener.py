@@ -10,3 +10,8 @@ class UrlShortener:
     """class of generating a 8 bytes hash shorter url."""
 
     DIGEST_SIZE = 8
+
+
+    def __init__(self):
+        logging.basicConfig(level=logging.INFO)
+
