@@ -6,3 +6,5 @@ from hashlib import blake2b
 
 logger = logging.getLogger(__name__)
 
+class UrlShortener:
+    pass
