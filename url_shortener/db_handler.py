@@ -2,3 +2,4 @@
 """Database Handler class"""
 import logging
 import os
+import psycopg2
