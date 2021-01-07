@@ -60,3 +60,6 @@ class DBHandler:
                 conn.close()
 
         return record
+
+    def insert(self, data):
+        pass
