@@ -14,4 +14,8 @@ class DBHandler:
     """class of Database Handler"""
 
     def __init__(self):
-        logging.basicConfig(level=logging.INFO)"ok")
+        logging.basicConfig(level=logging.INFO)
+
+    @staticmethod
+    def _execute(sql_message, data, return_function=None):
+        pass
