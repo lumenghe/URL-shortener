@@ -62,4 +62,8 @@ class DBHandler:
         return record
 
     def insert(self, data):
-        pass
+        """insert data
+        :param data: in format (shortener, original_url, created)
+        :return: number of records updated
+        """
+        return self._execute(sql.INSERT, data, return_function="insert")
