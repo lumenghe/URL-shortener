@@ -78,7 +78,11 @@ class DBHandler:
         )
 
     def update(self, data):
-        pass
+        """fetch shortened
+        :param data: in format (original_url)
+        :return: number of records updated
+        """
+        return self._execute(sql.UPDATE, data, return_function="updat")
 
     def fetch_original_url(self, data):
         pass
