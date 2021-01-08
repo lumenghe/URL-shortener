@@ -85,7 +85,10 @@ class DBHandler:
         return self._execute(sql.UPDATE, data, return_function="updat")
 
     def fetch_original_url(self, data):
-        pass
+        return self._execute(
+            sql.GET_ORIGINAL_URL, data, return_function="fetchone"
+        )
+
 
     def deprecation(self, data):
         pass
