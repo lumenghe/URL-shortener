@@ -69,7 +69,13 @@ class DBHandler:
         return self._execute(sql.INSERT, data, return_function="insert")
 
     def fetch_shortened(self, data):
-        pass
+        """fetch shortened
+        :param data: in format (original_url)
+        :return: shorter url record
+        """
+        return self._execute(
+            sql.GET_SHORTENER, data, return_function="fetchone"
+        )
 
     def update(self, data):
         pass
