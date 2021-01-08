@@ -76,3 +76,6 @@ class DBHandler:
 
     def fetch_original_url(self, data):
         pass
+
+    def deprecation(self, data):
+        pass
