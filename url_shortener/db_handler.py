@@ -95,6 +95,10 @@ class DBHandler:
 
 
     def deprecation(self, data):
+        """deprecation url
+        :param data: in format (datetime)
+        :return: number of records updated
+        """
         return self._execute(
             sql.DEPRECATION, data, return_function="deprecation"
         )
