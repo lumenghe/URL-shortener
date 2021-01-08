@@ -85,6 +85,10 @@ class DBHandler:
         return self._execute(sql.UPDATE, data, return_function="updat")
 
     def fetch_original_url(self, data):
+        """fetch original url
+        :param data: in format (shorter url)
+        :return: original url record
+        """
         return self._execute(
             sql.GET_ORIGINAL_URL, data, return_function="fetchone"
         )
