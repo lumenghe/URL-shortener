@@ -104,4 +104,6 @@ class DBHandler:
         )
 
     def delete_shortener(self, data):
-        pass
+        return self._execute(
+            sql.DELETE_SHORTENER, data, return_function="delete"
+        )
