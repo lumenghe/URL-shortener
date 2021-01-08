@@ -70,3 +70,6 @@ class DBHandler:
 
     def fetch_shortened(self, data):
         pass
+
+    def update(self, data):
+        pass
