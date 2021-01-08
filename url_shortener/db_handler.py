@@ -79,3 +79,6 @@ class DBHandler:
 
     def deprecation(self, data):
         pass
+
+    def delete_shortener(self, data):
+        pass
