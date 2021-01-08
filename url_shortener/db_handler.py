@@ -73,3 +73,6 @@ class DBHandler:
 
     def update(self, data):
         pass
+
+    def fetch_original_url(self, data):
+        pass
