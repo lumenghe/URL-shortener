@@ -67,3 +67,6 @@ class DBHandler:
         :return: number of records updated
         """
         return self._execute(sql.INSERT, data, return_function="insert")
+
+    def fetch_shortened(self, data):
+        pass
