@@ -104,6 +104,10 @@ class DBHandler:
         )
 
     def delete_shortener(self, data):
+        """delete row by shorter url
+        :param data: in format (shorter url)
+        :return: number of records updated
+        """
         return self._execute(
             sql.DELETE_SHORTENER, data, return_function="delete"
         )
