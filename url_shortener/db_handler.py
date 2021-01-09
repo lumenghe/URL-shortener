@@ -82,7 +82,7 @@ class DBHandler:
         :param data: in format (original_url)
         :return: number of records updated
         """
-        return self._execute(sql.UPDATE, data, return_function="updat")
+        return self._execute(sql.UPDATE, data, return_function="update")
 
     def fetch_original_url(self, data):
         """fetch original url
@@ -92,7 +92,6 @@ class DBHandler:
         return self._execute(
             sql.GET_ORIGINAL_URL, data, return_function="fetchone"
         )
-
 
     def deprecation(self, data):
         """deprecation url
